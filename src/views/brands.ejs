@@ -5,6 +5,7 @@
         <link rel="stylesheet" href="/styles/index.css" type="text/css">
     </head>
     <body>
+
         <nav>
             <a href="/">HOME</a>
             <div>
@@ -15,16 +16,10 @@
         </nav>
         <h1><%= title %></h1>
         <section>
-            <% products.forEach(product => { %>
-                <a href="/product/<%= product.id
-                    %>" class="card">
-                    <img class="cardImg" src="<%= product.image_url %>" alt="<%= product.name %>">
-                    <hr>
-                    <div class="cardInfo">
-                        <p><%= product.name %></p>
-                        <p><%= product.price %>€</p>
-                    </div>
-                </a>
+            <% brands.forEach(brand => { %>
+                <div>
+                    <%= brand.name %>
+                </div>
             <% }) %>
         </section>
     </body>

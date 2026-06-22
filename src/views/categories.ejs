@@ -15,16 +15,10 @@
         </nav>
         <h1><%= title %></h1>
         <section>
-            <% products.forEach(product => { %>
-                <a href="/product/<%= product.id
-                    %>" class="card">
-                    <img class="cardImg" src="<%= product.image_url %>" alt="<%= product.name %>">
-                    <hr>
-                    <div class="cardInfo">
-                        <p><%= product.name %></p>
-                        <p><%= product.price %>€</p>
-                    </div>
-                </a>
+            <% categories.forEach(category => { %>
+                <div>
+                    <%= category.name %>
+                </div>
             <% }) %>
         </section>
     </body>

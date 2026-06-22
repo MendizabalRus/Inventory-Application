@@ -10,7 +10,13 @@ async function getDbAllProducts() {
   return rows;
 }
 
+async function getDbAllBrands() {
+    const { rows } = await pool.query("SELECT * FROM brands");
+    return rows;
+}
+
 module.exports = {
   getDbAllCategories,
   getDbAllProducts,
+  getDbAllBrands,
 };
