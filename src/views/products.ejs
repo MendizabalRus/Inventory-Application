@@ -14,18 +14,23 @@
             </div>
         </nav>
         <h1><%= title %></h1>
-        <section>
-            <% products.forEach(product => { %>
-                <a href="/product/<%= product.id
-                    %>" class="card">
-                    <img class="cardImg" src="<%= product.image_url %>" alt="<%= product.name %>">
-                    <hr>
-                    <div class="cardInfo">
-                        <p><%= product.name %></p>
-                        <p><%= product.price %>€</p>
-                    </div>
-                </a>
-            <% }) %>
-        </section>
+        <div class="productsPanel">
+            <section class="filters">
+                <a href="" class="applyFilters">APPLY</a>
+            </section>
+            <section class="products"> 
+                <% products.forEach(product => { %>
+                    <a href="/products/<%= product.id
+                        %>" class="card">
+                        <img class="cardImg" src="<%= product.image_url %>" alt="<%= product.name %>">
+                        <hr>
+                        <div class="cardInfo">
+                            <p><%= product.brand %> <%= product.name %></p>
+                            <p><%= product.price %>€</p>
+                        </div>
+                    </a>
+                <% }) %>
+            </section>
+        </div>
     </body>
 </html>

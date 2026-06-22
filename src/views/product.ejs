@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title><%= product.name %></title>
+        <link rel="stylesheet" href="/styles/index.css" type="text/css">
+    </head>
+    <body>
+        <section class="product">
+            <img class="productImg" src="<%= product.image_url %>" alt="<%= product.name %>">
+            <div class="productInfo">
+                <h2><%= product.brand %> <%= product.name %></h2>
+                <p><%= product.description %></p>
+                <hr>
+                <div>
+                    <h3>Stock: <%= product.stock_quantity %> units</h3>
+                    <h3>Price: $<%= product.price %></h3>
+                </div>
+                <hr>
+                <h3 class="brand"><%= product.brand %></h3>
+                <h3 class="category"><%= product.category %></h3>
+            </div>
+        </section>
+    </body>
+</html>

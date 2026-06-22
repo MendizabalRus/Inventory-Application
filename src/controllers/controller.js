@@ -22,6 +22,14 @@ async function getAllProducts(req, res) {
   });
 }
 
+async function getProduct(req, res) {
+  const id = req.params.id;
+  const product = await database.getDbProduct(id);
+  res.render("product", {
+    product: product,
+  });
+}
+
 async function getAllBrands(req, res) {
   const brands = await database.getDbAllBrands();
   res.render("brands", {
@@ -34,5 +42,6 @@ module.exports = {
   getHomePage,
   getAllCategories,
   getAllProducts,
+  getProduct,
   getAllBrands,
 };
