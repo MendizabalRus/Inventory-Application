@@ -20,5 +20,9 @@
                 <h3 class="category"><%= product.category %></h3>
             </div>
         </section>
+        <button>UPADTE</button>
+        <form action="/products/<%= product.id %>/delete" method="POST">
+            <button type="submit">DELETE</button>
+        </form>
     </body>
 </html>

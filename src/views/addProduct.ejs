@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title><%= title %></title>
+        <link rel="stylesheet" href="/styles/index.css" type="text/css">
+    </head>
+    <body>
+        <h1><%= title %></h1>
+        <form action="/products/addProduct" method="POST" class="addProduct">
+            <label>
+                Product name:
+                <input type="text" name="name" placeholder="name" required>
+            </label>
+            <label>
+                Description:
+                <textarea type="text" name="description" placeholder="" required></textarea>
+            </label>
+            <label>
+                Price: $
+                <input type="number" name="price" min="0">
+            </label>
+            <label>
+                Stock (units):
+                <input type="number" name="stock" min="0">
+            </label>
+            <label>
+                Category id:
+                <input type="number" name="category" placeholder="category id" required>
+            </label>
+            <label>
+                Brand id:
+                <input type="number" name="brand" placeholder="brand id" required>
+            </label>
+            <label>
+                Image Url:
+                <input type="url" name="image" required>
+            </label>
+            <button type="submit">ADD PRODUCT</button>
+        </form>
+    </body>
+</html>

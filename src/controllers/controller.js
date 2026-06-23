@@ -30,6 +30,32 @@ async function getProduct(req, res) {
   });
 }
 
+async function getAddProduct(req, res) {
+  res.render("addProduct", {
+    title: "ADD NEW PRODUCT",
+  });
+}
+
+async function updateProduct(req, res) {
+  const id = req.body.id;
+  console.log(id);
+  //const deleteProduct = await database.updateDbProduct(id);
+  res.redirect("/products");
+}
+
+async function postDeleteProduct(req, res) {
+  const id = req.params.id;
+  await database.postDbDeleteProduct(id);
+  res.redirect("/products");
+}
+
+async function postAddProduct(req, res) {
+  const body = req.body;
+  console.log(body);
+  const addProduct = await database.postDbAddProduct(body.name, body.description, body.price, body.stock, body.category, body.brand, body.image);
+  res.redirect("/products");
+}
+
 async function getAllBrands(req, res) {
   const brands = await database.getDbAllBrands();
   res.render("brands", {
@@ -43,5 +69,9 @@ module.exports = {
   getAllCategories,
   getAllProducts,
   getProduct,
+  updateProduct,
+  postDeleteProduct,
+  getAddProduct,
+  postAddProduct,
   getAllBrands,
 };
