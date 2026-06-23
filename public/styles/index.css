@@ -1,0 +1,253 @@
+/*
+    JOSH W. COMEAU'S RESET
+*/
+
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+*:not(dialog) {
+  margin: 0;
+}
+
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+body {
+  /* 4. Increase line-height */
+  line-height: 1.5;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 6. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 7. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 9. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+/*
+  10. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/*
+    VARIABLES
+*/
+
+:root {
+  --p-color: rgb(255, 255, 255, 0.8);
+  --s-color: rgba(0, 0, 0, 0.9);
+  --border: 1px solid var(--p-color);
+}
+
+/*
+    INVENTORY APPLICATION
+*/
+
+html {
+  min-height: 100%;
+  width: 100vw;
+}
+
+body {
+  height: 100vh;
+  min-height: 100%;
+  width: 100vw;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin: 0px;
+
+  font-family: sans-serif;
+
+  background-color: var(--s-color);
+
+  color: var(--p-color);
+}
+
+/*
+    NAVBAR
+*/
+
+nav {
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+
+  padding: 50px 0px;
+}
+
+nav div {
+  width: 75%;
+  display: flex;
+  justify-content: flex-end;
+  gap: 50px;
+}
+
+a {
+  color: var(--p-color);
+  font-weight: 600;
+  text-underline-offset: 3px;
+}
+
+/*
+    PRODUCTS PANEL
+*/
+
+.productsPanel {
+  width: 90%;
+
+  display: flex;
+  gap: 50px;
+
+  margin: 50px 0px;
+}
+
+/*
+    PRODUCTS PANEL: PRODUCTS
+*/
+
+.products {
+  flex: 3;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+
+  padding: 20px 50px;
+
+  border: var(--border);
+  border-radius: 10px;
+}
+
+.card {
+  border: var(--border);
+  border-radius: 10px;
+
+  text-decoration: none;
+
+  overflow: hidden;
+}
+
+.cardImg {
+  width: 200px;
+  height: auto;
+  justify-self: center;
+}
+
+.cardInfo {
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  
+  padding: 10px;
+}
+
+/*
+    PRODUCT
+*/
+
+.product {
+  display: flex;
+  gap: 20px;
+
+  padding: 50px;
+}
+
+.productImg {
+  width: 200px;
+  height: auto;
+}
+
+.productInfo > hr {
+  margin: 10px 0px;
+}
+
+.productInfo > div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.category, .brand {
+  width: 100%;
+
+  margin-bottom: 10px;
+  padding: 5px;
+
+  border: var(--border);
+  border-radius: 30px;
+
+  text-align: center;
+}
+
+/*
+    ADD PRODUCT
+*/
+
+.addProduct {
+  width: 50%;
+
+  margin-top: 40px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.addProduct label {
+  display: flex;
+  justify-content: space-between;
+}
