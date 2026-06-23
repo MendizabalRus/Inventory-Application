@@ -16,9 +16,6 @@
         <h1><%= title %></h1>
         <a href="/products/addProduct" class="addProduct">ADD NEW PRODUCT</a>
         <div class="productsPanel">
-            <section class="filters">
-                <a href="" class="applyFilters">APPLY</a>
-            </section>
             <section class="products"> 
                 <% products.forEach(product => { %>
                     <a href="/products/<%= product.id
