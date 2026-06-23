@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title><%= product.name %></title>
+        <link rel="stylesheet" href="/styles/index.css" type="text/css">
+    </head>
+    <body>
+        <form action="/products/<%= product.id %>/update" method="POST" class="product">
+            <div class="productImg">
+                <img src="<%= product.image_url %>" alt="<%= product.name %>">
+                <label>
+                    Image Url:
+                    <input type="url" value="<%= product.image_url %>" name="image" required>
+                </label>
+            </div>
+            <div class="productInfo">
+                <h2><input type="text" value="<%= product.name %>" name="name" required></h2>
+                <p><textarea name="description" required><%= product.description %></textarea></p>
+                <hr>
+                <div>
+                    <h3>Stock: <input type="number" name="stock" value="<%= product.stock_quantity %>" required> units</h3>
+                    <h3>Price: $ <input type="number" name="price" value="<%= product.price %>" required></h3>
+                </div>
+                <hr>
+                <h3 class="brand"><select name="brand"><% brands.forEach(b => { %>
+                    <option value="<%= b.id %>" <%= b.id === product.brand_id ? "selected" : "" %>><%=b.name %></option><% }) %></select>
+                </h3>
+                <h3     class="category"><select name="category"><%categories.forEach(c => { %><option value="<%= c.id %>" <%= c.id === product.category_id ? "selected" : "" %>><%= c.name %></option><% }) %></select></h3>
+            </div>
+            <button type="submit">UPDATE INFORMATION</button>
+        </form>
+    </body>
+</html>

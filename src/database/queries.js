@@ -34,7 +34,21 @@ async function getDbProduct(id) {
   return rows[0];
 }
 
-async function updateDbProduct() {}
+async function postDbUpdateProduct(
+  id,
+  name,
+  description,
+  price,
+  stock,
+  category,
+  brand,
+  image,
+) {
+  await pool.query(
+    `UPDATE products SET name = $1, description = $2, price = $3, stock_quantity = $4, category_id = $5, brand_id = $6, image_url = $7 WHERE id = $8`,
+    [name, description, price, stock, category, brand, image, id],
+  );
+}
 
 async function postDbDeleteProduct(id) {
   await pool.query(`DELETE FROM products WHERE id = ${id}`);
@@ -50,7 +64,7 @@ module.exports = {
   getDbAllProducts,
   postDbAddProduct,
   getDbProduct,
-  updateDbProduct,
+  postDbUpdateProduct,
   postDbDeleteProduct,
   getDbAllBrands,
 };

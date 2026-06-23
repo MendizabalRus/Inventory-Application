@@ -10,8 +10,8 @@ router.get("/products", controller.getAllProducts);
 router.get("/products/addProduct", controller.getAddProduct);
 router.post("/products/addProduct", controller.postAddProduct);
 router.get("/products/:id", controller.getProduct);
-router.get("/products/:id/edit", controller.updateProduct);
-router.post("/products/:id/edit", controller.updateProduct);
+router.get("/products/:id/update", controller.getUpdateProduct);
+router.post("/products/:id/update", controller.postUpdateProduct);
 router.post("/products/:id/delete", controller.postDeleteProduct);
 
 router.get("/brands", controller.getAllBrands);
